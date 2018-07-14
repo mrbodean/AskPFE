@@ -1,0 +1,27 @@
+[ SMS_Report (TRUE),
+  SMS_Group_Name ("CertInfo"),
+  SMS_Class_ID ("MICROSOFT|CM_CERTINFO|1.0"),
+  Namespace ("root\\\\cimv2") ]
+class cm_CertInfo : SMS_Class_Template
+{
+    [ SMS_Report (TRUE), key ]
+    String     Handle;
+    [ SMS_Report (TRUE), key ]
+    String     Location;
+    [ SMS_Report (TRUE) ]
+    UInt32     ExpiresinDays;
+    [ SMS_Report (TRUE) ]
+    String     FriendlyName;
+    [ SMS_Report (TRUE) ]
+    String     Issuer;
+    [ SMS_Report (TRUE) ]
+    String     NotAfter;
+    [ SMS_Report (TRUE) ]
+    String     NotBefore;
+    [ SMS_Report (TRUE) ]
+    String     ScriptLastRan;
+    [ SMS_Report (TRUE) ]
+    String     Subject;
+    [ SMS_Report (TRUE) ]
+    String     Thumbprint;
+};
