@@ -1,0 +1,14 @@
+<ActionDescription Class="Executable" DisplayName="PFE FQDN Remote Control" MnemonicDisplayName="PFE FQDN Remote Control" Description = "Use FQDN to start remote control session">
+  <ShowOn>
+    <string>ContextMenu</string>
+  </ShowOn>
+  <Executable>
+    <FilePath>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</FilePath>
+    <Parameters>-nologo -noprofile -noninteractive -windowstyle hidden -ExecutionPolicy Bypass -Command "&amp; { &amp; $env:SMS_ADMIN_UI_PATH\CmRcViewer.exe $([net.dns]::GetHostEntry('##SUB:NAME##').Hostname) }" </Parameters>
+  </Executable>
+  <SecurityConfiguration>
+    <ClassPermissions>
+      <ActionSecurityDescription RequiredPermissions="32" ClassObject="SMS_Collection"/>
+    </ClassPermissions>
+  </SecurityConfiguration>
+</ActionDescription>
